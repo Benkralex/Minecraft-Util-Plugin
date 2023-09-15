@@ -1,0 +1,4 @@
+name: Minecraft-Util-Plugin
+version: '${project.version}'
+main: benkralex.minecraftutilplugin.Minecraft_Util_Plugin
+api-version: '1.20'
