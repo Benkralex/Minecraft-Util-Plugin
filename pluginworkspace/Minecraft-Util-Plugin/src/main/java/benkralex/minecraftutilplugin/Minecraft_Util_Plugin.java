@@ -3,6 +3,7 @@ package benkralex.minecraftutilplugin;
 import benkralex.minecraftutilplugin.api.UtilPlugin;
 import benkralex.minecraftutilplugin.api.format.Format;
 import benkralex.minecraftutilplugin.api.register.PluginRegister;
+import benkralex.minecraftutilplugin.commands.Commands;
 import benkralex.minecraftutilplugin.config.ConfigFormat;
 import benkralex.minecraftutilplugin.config.ConfigUtils;
 import org.bukkit.Bukkit;
@@ -23,9 +24,9 @@ public final class Minecraft_Util_Plugin extends UtilPlugin {
         plugin = this;
         mainFolder = this.getDataFolder();
         PluginRegister register = new PluginRegister();
-        for (Plugin p:Bukkit.getPluginManager().getPlugins()) {
-            if (p instanceof UtilPlugin) {
-                UtilPlugin utilPlugin = (UtilPlugin)p;
+        for (Plugin plugin:Bukkit.getPluginManager().getPlugins()) {
+            if (plugin instanceof UtilPlugin) {
+                UtilPlugin utilPlugin = (UtilPlugin) plugin;
                 utilPlugin.register(register);
             }
         }
@@ -36,6 +37,11 @@ public final class Minecraft_Util_Plugin extends UtilPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    @Override
+    public void onLoad() {
+        Commands.createCommand();
     }
 
     @Override
