@@ -5,10 +5,9 @@ import benkralex.minecraftutilplugin.api.format.Format;
 import benkralex.minecraftutilplugin.api.register.PluginRegister;
 import benkralex.minecraftutilplugin.config.ConfigFormat;
 import benkralex.minecraftutilplugin.config.ConfigUtils;
+import benkralex.minecraftutilplugin.listeners.InventoryInteractListener;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
@@ -29,6 +28,7 @@ public final class Minecraft_Util_Plugin extends UtilPlugin {
                 utilPlugin.register(register);
             }
         }
+        Bukkit.getPluginManager().registerEvents(new InventoryInteractListener(), this);
         ConfigUtils.createConfig();
         ConfigFormat.createConfig(register);
     }
