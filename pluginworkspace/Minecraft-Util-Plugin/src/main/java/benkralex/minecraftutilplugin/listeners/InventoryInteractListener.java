@@ -14,7 +14,7 @@ import org.bukkit.inventory.meta.BlockStateMeta;
 public class InventoryInteractListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     public void onItemClick(InventoryClickEvent e) {
-        if (e.isRightClick()) {
+        if (e.isRightClick() && e.getCurrentItem() != null) {
             switch (e.getCurrentItem().getType()) {
                 case CRAFTING_TABLE: {
                     e.setCancelled(true);
@@ -31,9 +31,9 @@ public class InventoryInteractListener implements Listener {
                 case SHULKER_BOX: {
                     e.setCancelled(true);
                     ItemStack item = e.getCurrentItem();
-                    if(item.getItemMeta() instanceof BlockStateMeta){
-                        BlockStateMeta im = (BlockStateMeta)item.getItemMeta();
-                        if(im.getBlockState() instanceof ShulkerBox){
+                    if (item.getItemMeta() instanceof BlockStateMeta) {
+                        BlockStateMeta im = (BlockStateMeta) item.getItemMeta();
+                        if (im.getBlockState() instanceof ShulkerBox) {
                             ShulkerBox shulker = (ShulkerBox) im.getBlockState();
                             Inventory inv = Bukkit.createInventory(null, InventoryType.SHULKER_BOX, im.getDisplayName());
                             inv.setContents(shulker.getInventory().getContents());
