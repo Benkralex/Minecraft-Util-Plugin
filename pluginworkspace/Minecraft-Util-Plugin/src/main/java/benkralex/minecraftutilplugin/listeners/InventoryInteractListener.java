@@ -17,11 +17,15 @@ public class InventoryInteractListener implements Listener {
         if (e.isRightClick()) {
             switch (e.getCurrentItem().getType()) {
                 case CRAFTING_TABLE: {
-                    e.getWhoClicked().openInventory(Bukkit.createInventory(null, InventoryType.CRAFTING));
+                    e.getWhoClicked().openInventory(Bukkit.createInventory(null, InventoryType.WORKBENCH));
+                    e.setCancelled(true);
+                    e.setCursor(null);
                     break;
                 }
                 case ENDER_CHEST: {
                     e.getWhoClicked().openInventory(e.getWhoClicked().getEnderChest());
+                    e.setCancelled(true);
+                    e.setCursor(null);
                     break;
                 }
                 case SHULKER_BOX: {
@@ -30,11 +34,13 @@ public class InventoryInteractListener implements Listener {
                         BlockStateMeta im = (BlockStateMeta)item.getItemMeta();
                         if(im.getBlockState() instanceof ShulkerBox){
                             ShulkerBox shulker = (ShulkerBox) im.getBlockState();
-                            Inventory inv = Bukkit.createInventory(null, InventoryType.SHULKER_BOX, shulker.getCustomName());
+                            Inventory inv = Bukkit.createInventory(null, InventoryType.SHULKER_BOX, im.getDisplayName());
                             inv.setContents(shulker.getInventory().getContents());
                             e.getWhoClicked().openInventory(inv);
                         }
                     }
+                    e.setCancelled(true);
+                    e.setCursor(null);
                     break;
                 }
             }
