@@ -13,6 +13,9 @@ public class ConfigUtils {
         configUtils.options().copyDefaults(true);
         configUtils.addDefault("format.chat", true);
         configUtils.addDefault("format.msg", true);
+        configUtils.addDefault("invopen.workbench", true);
+        configUtils.addDefault("invopen.enderchest", true);
+        configUtils.addDefault("invopen.shulkerbox", true);
     }
 
     public static boolean getFormatChat() {
@@ -28,4 +31,23 @@ public class ConfigUtils {
         }
         return configUtils.getBoolean("format.msg");
     }
+    public static boolean getInvopenWorkbench() {
+        if (configUtils.get("invopen.workbench") == null) {
+            return true;
+        }
+        return configUtils.getBoolean("invopen.workbench");
+    }
+    public static boolean getInvopenEnderchest() {
+        if (configUtils.get("invopen.enderchest") == null) {
+            return true;
+        }
+        return configUtils.getBoolean("invopen.enderchest");
+    }
+    public static boolean getInvopenShulkerbox() {
+        if (configUtils.get("invopen.shulkerbox") == null) {
+            return true;
+        }
+        return configUtils.getBoolean("invopen.shulkerbox");
+    }
 }
+
