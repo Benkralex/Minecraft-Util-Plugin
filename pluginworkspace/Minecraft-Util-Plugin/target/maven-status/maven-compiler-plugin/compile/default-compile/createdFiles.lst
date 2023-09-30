@@ -1,10 +1,12 @@
+benkralex\minecraftutilplugin\listeners\InventoryInteractListener.class
 benkralex\minecraftutilplugin\commands\Commands.class
 benkralex\minecraftutilplugin\commands\Fly.class
+benkralex\minecraftutilplugin\api\register\PluginRegister.class
+benkralex\minecraftutilplugin\config\ConfigFormat.class
+benkralex\minecraftutilplugin\listeners\InventoryInteractListener$1.class
 benkralex\minecraftutilplugin\listeners\ChatFormatListener.class
 benkralex\minecraftutilplugin\api\UtilPlugin.class
 benkralex\minecraftutilplugin\config\ConfigUtils.class
 benkralex\minecraftutilplugin\listeners\MSGFormatListener.class
 benkralex\minecraftutilplugin\Minecraft_Util_Plugin.class
 benkralex\minecraftutilplugin\api\format\Format.class
-benkralex\minecraftutilplugin\api\register\PluginRegister.class
-benkralex\minecraftutilplugin\config\ConfigFormat.class
