@@ -12,6 +12,8 @@ public class Format {
         return new Format(name);
     }
 
+    
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
