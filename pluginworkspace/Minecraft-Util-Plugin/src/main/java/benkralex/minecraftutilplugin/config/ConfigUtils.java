@@ -20,32 +20,32 @@ public class ConfigUtils {
 
     public static boolean getFormatChat() {
         if (configUtils.get("format.chat") == null) {
-            return true;
+            return false;
         }
         return configUtils.getBoolean("format.chat");
     }
 
     public static boolean getFormatMSG() {
         if (configUtils.get("format.msg") == null) {
-            return true;
+            return false;
         }
         return configUtils.getBoolean("format.msg");
     }
     public static boolean getInvopenWorkbench() {
         if (configUtils.get("invopen.workbench") == null) {
-            return true;
+            return false;
         }
         return configUtils.getBoolean("invopen.workbench");
     }
     public static boolean getInvopenEnderchest() {
         if (configUtils.get("invopen.enderchest") == null) {
-            return true;
+            return false;
         }
         return configUtils.getBoolean("invopen.enderchest");
     }
     public static boolean getInvopenShulkerbox() {
         if (configUtils.get("invopen.shulkerbox") == null) {
-            return true;
+            return false;
         }
         return configUtils.getBoolean("invopen.shulkerbox");
     }

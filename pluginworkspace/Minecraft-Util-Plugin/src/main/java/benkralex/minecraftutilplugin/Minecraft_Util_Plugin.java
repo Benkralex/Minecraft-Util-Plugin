@@ -6,7 +6,9 @@ import benkralex.minecraftutilplugin.api.register.PluginRegister;
 import benkralex.minecraftutilplugin.commands.Commands;
 import benkralex.minecraftutilplugin.config.ConfigFormat;
 import benkralex.minecraftutilplugin.config.ConfigUtils;
+import benkralex.minecraftutilplugin.listeners.ChatFormatListener;
 import benkralex.minecraftutilplugin.listeners.InventoryInteractListener;
+import benkralex.minecraftutilplugin.listeners.MoveListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -30,6 +32,8 @@ public final class Minecraft_Util_Plugin extends UtilPlugin {
             }
         }
         Bukkit.getPluginManager().registerEvents(new InventoryInteractListener(), this);
+        Bukkit.getPluginManager().registerEvents(new MoveListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ChatFormatListener(), this);
         ConfigUtils.createConfig();
         ConfigFormat.createConfig(register);
     }
