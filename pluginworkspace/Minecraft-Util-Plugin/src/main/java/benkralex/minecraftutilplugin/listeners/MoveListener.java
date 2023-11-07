@@ -8,8 +8,6 @@ import org.bukkit.persistence.PersistentDataType;
 
 public class MoveListener implements Listener {
     public static void onMove(PlayerMoveEvent e) {
-        if (e.getPlayer().getPersistentDataContainer().getOrDefault(new NamespacedKey(Minecraft_Util_Plugin.plugin, "freezed"), PersistentDataType.BOOLEAN, false)) {
-            e.setCancelled(true);
-        }
+        e.setCancelled(e.getPlayer().getPersistentDataContainer().getOrDefault(new NamespacedKey(Minecraft_Util_Plugin.plugin, "freezed"), PersistentDataType.BOOLEAN, false));
     }
 }
